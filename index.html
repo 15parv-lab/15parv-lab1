@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DrawCam - Camera Drawing Canvas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div>
+            <h1>🎨 DrawCam</h1>
+            <p>Draw, erase and create on your camera view</p>
+        </div>
+
+        <button id="cameraBtn" class="camera-btn">
+            📷 Start Camera
+        </button>
+    </header>
+
+
+    <main>
+
+        <!-- Canvas Area -->
+        <section class="canvas-container">
+
+            <video id="camera" autoplay playsinline></video>
+
+            <canvas id="canvas"></canvas>
+
+            <div id="cameraMessage" class="camera-message">
+                <div>📷</div>
+                <p>Camera is off</p>
+                <small>Press "Start Camera" to begin</small>
+            </div>
+
+        </section>
+
+
+        <!-- Controls -->
+        <section class="controls">
+
+            <!-- Colors -->
+            <div class="control-group">
+
+                <h3>🎨 Colors</h3>
+
+                <div class="colors">
+
+                    <button class="color active"
+                        data-color="#ff0000"
+                        style="background:#ff0000"></button>
+
+                    <button class="color"
+                        data-color="#00ff00"
+                        style="background:#00ff00"></button>
+
+                    <button class="color"
+                        data-color="#0066ff"
+                        style="background:#0066ff"></button>
+
+                    <button class="color"
+                        data-color="#ffff00"
+                        style="background:#ffff00"></button>
+
+                    <button class="color"
+                        data-color="#ff00ff"
+                        style="background:#ff00ff"></button>
+
+                    <button class="color"
+                        data-color="#ffffff"
+                        style="background:#ffffff"></button>
+
+                    <button class="color"
+                        data-color="#000000"
+                        style="background:#000000"></button>
+
+                    <input type="color"
+                        id="customColor"
+                        value="#ff0000"
+                        title="Custom color">
+
+                </div>
+
+            </div>
+
+
+            <!-- Brush -->
+            <div class="control-group">
+
+                <h3>🖌️ Brush Size</h3>
+
+                <div class="brush-control">
+
+                    <input
+                        type="range"
+                        id="brushSize"
+                        min="1"
+                        max="50"
+                        value="8">
+
+                    <span id="sizeValue">8 px</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tools -->
+            <div class="control-group">
+
+                <h3>🛠️ Tools</h3>
+
+                <div class="tools">
+
+                    <button id="brushBtn" class="tool active">
+                        ✏️ Brush
+                    </button>
+
+                    <button id="eraserBtn" class="tool">
+                        🧹 Eraser
+                    </button>
+
+                    <button id="undoBtn" class="tool">
+                        ↩️ Undo
+                    </button>
+
+                    <button id="redoBtn" class="tool">
+                        ↪️ Redo
+                    </button>
+
+                    <button id="clearBtn" class="tool danger">
+                        🗑️ Clear
+                    </button>
+
+                    <button id="downloadBtn" class="tool success">
+                        💾 Save
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Camera controls -->
+            <div class="control-group">
+
+                <h3>📷 Camera</h3>
+
+                <div class="tools">
+
+                    <button id="flipCameraBtn" class="tool">
+                        🔄 Flip Camera
+                    </button>
+
+                    <button id="cameraOnlyBtn" class="tool">
+                        👁️ Camera Only
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>DrawCam • Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
